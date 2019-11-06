@@ -2,6 +2,7 @@
 
 Steps to create a Nikola Account with an auth token.
 
+0. Clone the repo
 1. python ./NikolaTeslaTokenMaker.py
 2. Enter your email address.
 3. Enter your Tesla password (this will only be sent directly to Tesla).

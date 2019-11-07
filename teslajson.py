@@ -49,9 +49,6 @@ def open(base_url, url, headers={}, data=None):
             pass
 
     resp = urlopen(req)
-    # print('INSECURE HTTPS!!!!!!!!!!!!!! FIX ME')
-    # resp = urlopen(req, context=ssl._create_unverified_context())
-    # print('INSECURE HTTPS!!!!!!!!!!!!!! FIX ME')
     charset = resp.info().get('charset', 'utf-8')
     return json.loads(resp.read().decode(charset))
 

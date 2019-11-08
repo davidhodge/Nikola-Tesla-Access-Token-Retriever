@@ -19,8 +19,8 @@ while True:
 
     except urllib2.HTTPError as err:
         if err.code == 401:
-            print("Unauthorized. We were unable to connect to Tesla on your behalf. Please try again. We're looking for the credentials you use to log in to Tesla's website.")
+            print("Unauthorized. We were unable to connect to Tesla on your behalf. Please try again. We're looking for the credentials you use to log in to Tesla's website. If you continue to encounter issues, try resetting your MyTesla password via the official Tesla App.\n\n")
         else:
-            print("Http Error. %s. Try again?" % err)
+            print("Http Error. %s. Try again?\n\n" % err)
     except Exception as err:
         print ("Error %s. Try again" % err)

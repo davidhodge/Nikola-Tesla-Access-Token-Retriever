@@ -3,7 +3,7 @@ import getpass
 import urllib2
 
 while True:
-    print "Welcome to the Nikola token retreiver! This script allows you to send us at Nikola a Tesla auth token. If you're not sure what this is, we recommend authenticating directly in to Nikola App Instead"
+    print "Welcome to the Nikola token retriever! This script allows you to send us at Nikola a Tesla auth token. If you're not sure what this is, we recommend authenticating directly in to Nikola App Instead"
     tesla_email = raw_input("Input your email address for your Tesla Account: ")
     tesla_password = getpass.getpass("Input your password for your Tesla Account: ")
 

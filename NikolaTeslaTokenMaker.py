@@ -17,7 +17,7 @@ while True:
         print("Tesla Refresh Token: " + connection.auth_dict['refresh_token'] + " We will use this to update your credentials in the future. This will be revoked whenever your account password is changed.")
         break
 
-    except urllib2.HTTPError as err:
+    except urllib3.exceptions.HTTPError as err:
         if err.code == 401:
             print("Unauthorized. We were unable to connect to Tesla on your behalf. Please try again. We're looking for the credentials you use to log in to Tesla's website. If you continue to encounter issues, try resetting your MyTesla password via the official Tesla App.\n\n")
         else:

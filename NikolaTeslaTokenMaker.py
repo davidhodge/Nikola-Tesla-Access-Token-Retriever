@@ -1,15 +1,15 @@
 import teslajson
 import getpass
-import urllib2
+import urllib3
 
 while True:
-    print "Welcome to the Nikola token retriever! This script allows you to send us at Nikola a Tesla auth token. If you're not sure what this is, we recommend authenticating directly in to Nikola App Instead"
-    tesla_email = raw_input("Input your email address for your Tesla Account: ")
+    print("Welcome to the Nikola token retriever! This script allows you to send us at Nikola a Tesla auth token. If you're not sure what this is, we recommend authenticating directly in to Nikola App Instead")
+    tesla_email = input("Input your email address for your Tesla Account: ")
     tesla_password = getpass.getpass("Input your password for your Tesla Account: ")
 
     try:
         connection = teslajson.Connection(email=tesla_email, password=tesla_password)
-        print ("Great! We've authenticated this account with Tesla.")
+        print("Great! We've authenticated this account with Tesla.")
 
         print("Please send the information text to Nikola (David Hodge) securely.")
         print("Tesla Email Address: " + tesla_email)
@@ -23,4 +23,4 @@ while True:
         else:
             print("Http Error. %s. Try again?\n\n" % err)
     except Exception as err:
-        print ("Error %s. Try again" % err)
+        print("Error %s. Try again" % err)

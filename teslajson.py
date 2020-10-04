@@ -21,20 +21,10 @@ except:  # Python 2
     from urllib import urlencode
     from urllib2 import Request, urlopen
 import json
-from retrying import retry
 
 client_id = '81527cff06843c8634fdc09e8ac0abefb46ac849f38fe1e431c2ef2106796384'
 client_secret = 'c7257eb71a564034f9419ee651c7d0e5f7aa6bfbd18bafb5c5c033b093bb2fa3'
 tesla_base_url = 'https://owner-api.teslamotors.com'
-
-
-# returns a dict containing: access_token, refresh_token, tesla_token_grant_date, tesla_token_expiration_date
-# make sure to save those values because the old tokens, etc become invalid after we succeed at this call!!!
-@retry(stop_max_attempt_number=4, wait_exponential_multiplier=1000, wait_exponential_max=20000)
-def rotate_tesla_token(email, refresh_token):
-    data = {'refresh_token': refresh_token, 'client_secret': client_secret, 'grant_type': 'refresh_token',
-            'email': email, 'client_id': client_id}
-    return open(tesla_base_url, '/oauth/token', data=data)
 
 
 def open(base_url, url, headers={}, data=None):

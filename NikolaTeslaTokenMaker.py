@@ -13,7 +13,7 @@ while True:
 
         print("Please send the information text to Nikola (David Hodge) securely.")
         print("Tesla Email Address: " + tesla_email)
-        print("Tesla Acces Token: " + connection.access_token + " This will be revoked whenever your account password is changed.")
+        print("Tesla Acces Token: " + connection.access_token + " . Nikola will not use this Token directly. This will be revoked whenever your account password is changed.")
         print("Tesla Refresh Token: " + connection.auth_dict['refresh_token'] + " We will use this to update your credentials in the future. This will be revoked whenever your account password is changed.")
         break
 
